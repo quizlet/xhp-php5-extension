@@ -527,6 +527,9 @@ foreach_variable:
 | '&' variable {
     $$ = $1 + $2;
   }
+| T_LIST '(' assignment_list ')' {
+    $$ = $1 + $2 + $3 + $4;
+  }
 ;
 
 for_statement:
